@@ -28,7 +28,10 @@ app.use(session({
 
 
 //connected to database
-mongoose.connect(process.env.MONGOURL).then(
+mongoose.connect(process.env.MONGOURL,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}).then(
     console.log('connected to database')
 )
 
